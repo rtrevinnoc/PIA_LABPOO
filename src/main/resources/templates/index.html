@@ -1,60 +1,118 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'index')}">
 
-<body>
+	<body class="bg-light">
 
-<div class="jumbotron text-center">
-  <div class="container">
-    <a href="/" class="lang-logo">
-      <img src="/lang-logo.png">
-    </a>
-    <h1>Getting Started with Java on Heroku</h1>
-    <p>This is a sample Java application deployed to Heroku. It's a reasonably simple app - but a good foundation for understanding how to get the most out of the Heroku platform.</p>
-    <a type="button" class="btn btn-lg btn-default" href="https://devcenter.heroku.com/articles/getting-started-with-java"><span class="glyphicon glyphicon-flash"></span> Getting Started with Java</a>
-    <a type="button" class="btn btn-lg btn-primary" href="https://github.com/heroku/java-getting-started"><span class="glyphicon glyphicon-download"></span> Source on GitHub</a>
-  </div>
-</div>
-<div class="container">
-  <div class="alert alert-info text-center" role="alert">
-    To deploy your own copy, and learn the fundamentals of the Heroku platform, head over to the <a href="https://devcenter.heroku.com/articles/getting-started-with-java" class="alert-link">Getting Started with Java on Heroku</a> tutorial.
-  </div>
-  <hr>
-  <div class="row">
-    <div class="col-md-6">
-      <h3><span class="glyphicon glyphicon-info-sign"></span> How this sample app works</h3>
-      <ul>
-        <li>This app was deployed to Heroku, either using Git or by using <a href="https://github.com/heroku/java-getting-started">Heroku Button</a> on the repository.</li>
+		<header class="site-header py-1">
+			<nav class="d-flex flex-column flex-md-row justify-content-between align-self-center">
+				<div class="py-3 d-none d-md-inline-block"></div>
+				<a class="py-2" href="#" aria-label="Formulario">
+					<!--<img src="./logo.png" alt="La Canastilla" style="height: 48px; max-width: 100%;" />-->
+					<h1>Formulario</h1>
+				</a>
+				<div class="py-3 d-none d-md-inline-block"></div>
+			</nav>
+		</header>
+		<div class="container">
+			<div class="py-5 text-center">
+			</div>
 
-        <li>When Heroku received the source code, it fetched all the dependencies in the <a href="https://github.com/heroku/java-getting-started/blob/main/pom.xml">pom.xml</a>, creating a slug.</li>
-        <li>The platform then spins up a dyno, a lightweight container that provides an isolated environment in which the slug can be mounted and executed.</li>
-        <li>You can scale your app, manage it, and deploy over <a href="https://addons.heroku.com/">150 add-on services</a>, from the Dashboard or CLI.</li>
-      </ul>
-    </div>
-    <div class="col-md-6">
-      <h3><span class="glyphicon glyphicon-link"></span> Next Steps</h3>
-      <ul>
-        <li>If you are following the <a href="https://devcenter.heroku.com/articles/getting-started-with-java">Getting Started</a> guide, then please head back to the tutorial and follow the next steps!</li>
-        <li>If you deployed this app by deploying the Heroku Button, then in a command line shell, run:</li>
-        <ul>
-          <li><code>git clone https://github.com/heroku/java-getting-started.git</code> - this will create a local copy of the source code for the app</li>
-          <li><code>cd java-getting-started</code> - change directory into the local source code repository</li>
-          <li><code>heroku git:remote -a &lt;your-app-name></code> - associate the Heroku app with the repository</li>
-          <li>You'll now be set up to run the app locally, or <a href="https://devcenter.heroku.com/articles/getting-started-with-java#push-local-changes">deploy changes</a> to Heroku</li>
-        </ul>
-      </ul>
-      <h3><span class="glyphicon glyphicon-link"></span> Helpful Links</h3>
-      <ul>
-        <li><a href="https://www.heroku.com/home">Heroku</a></li>
-        <li><a href="https://devcenter.heroku.com/">Heroku Dev Center</a></li>
-        <li><a href="https://devcenter.heroku.com/articles/getting-started-with-java">Getting Started with Java on Heroku</a></li>
-        <li><a href="https://devcenter.heroku.com/articles/deploying-java">Deploying Java Apps on Heroku</a></li>
-      </ul>
-    </div>
-  </div> <!-- row -->
-   <div class="alert alert-info text-center" role="alert">
-    Please do work through the Getting Started guide, even if you do know how to build such an application.  The guide covers the basics of working with Heroku, and will familiarize you with all the concepts you need in order to build and deploy your own apps.
-  </div>
-</div>
+			<form class="needs-validation" novalidate>
+				<div class="row">
+					<div class="col mb-3">
+						<label for="nombre">Nombre</label>
+						<input type="text" class="form-control" id="nombre" placeholder="" value="" required>
+						<div class="invalid-feedback">
+							Se requiere un nombre válido.
+						</div>
+					</div>
+					<div class="col mb-3">
+						<label for="apellidoPaterno">Apellido Paterno</label>
+						<input type="text" class="form-control" id="apellidoPaterno" placeholder="" value="" required>
+						<div class="invalid-feedback">
+							Se requiere un apellido válido.
+						</div>
+					</div>
+					<div class="col mb-3">
+						<label for="apellidoMaterno">Apellido Materno</label>
+						<input type="text" class="form-control" id="apellidoMaterno" placeholder="" value="" required>
+						<div class="invalid-feedback">
+							Se requiere un apellido válido.
+						</div>
+					</div>
+				</div>
 
-</body>
+				<div class="mb-3">
+					<label for="email">Correo Electrónico</label>
+					<input type="email" class="form-control" id="email" placeholder="nombre@dominio.com" required>
+					<div class="invalid-feedback">
+						Introduce una dirección de correo válida.
+					</div>
+				</div>
+
+				<div class="mb-3">
+					<label for="telefono">Telefono</label>
+					<input type="text" class="form-control" id="telefono" placeholder="" required>
+					<div class="invalid-feedback">
+						Introduce una dirección válida.
+					</div>
+				</div>
+
+				<hr class="mb-4">
+
+				<h5 class="mb-3">Fecha de Nacimiento</h5>
+
+				<div class="row">
+					<div class="col mb-3">
+						<label for="dia">Día</label>
+						<input type="number" class="form-control" id="dia" min="1" max="31" placeholder="1" required>
+					</div>
+					<div class="col mb-3">
+						<label for="mes">Mes</label>
+						<select class="custom-select d-block w-100" id="mes" required>
+							<option value="1">Enero</option>
+							<option value="2">Febrero</option>
+							<option value="3">Marzo</option>
+							<option value="4">Abril</option>
+							<option value="5">Mayo</option>
+							<option value="6">Junio</option>
+							<option value="7">Julio</option>
+							<option value="8">Agosto</option>
+							<option value="9">Septiembre</option>
+							<option value="10">Octubre</option>
+							<option value="11">Noviembre</option>
+							<option value="12">Diciembre</option>
+						</select>
+					</div>
+					<div class="col mb-3">
+						<label for="year">Año</label>
+						<input type="number" class="form-control" id="year" min="1900" max="2021" placeholder="2000" required>
+					</div>
+				</div>
+
+				<hr class="mb-4">
+				<div class="row">
+					<div class="col mb-3">
+						<button class="btn btn-success btn-lg btn-block" id="crear" type="submit">Crear</button>
+					</div>
+					<div class="col mb-3">
+						<button class="btn btn-info btn-lg btn-block" id="consultar" type="submit">Consultar</button>
+					</div>
+					<div class="col mb-3">
+						<button class="btn btn-warning btn-lg btn-block disabled" id="modificar" type="submit">Modificar</button>
+					</div>
+					<div class="col mb-3">
+						<button class="btn btn-danger btn-lg btn-block disabled" id="borrar" type="submit">Borrar</button>
+					</div>
+				</div>
+			</form>
+
+			<!--<footer class="my-5 pt-5 text-muted text-center text-small">-->
+			<!--<img src="./logo_dark.png" alt="La Canastilla" style="height: 48px; max-width: 100%;" />-->
+			<!--<p class="mb-1">&copy; 2021</p>-->
+			<!--</footer>-->
+		</div>
+
+		<script src="/scripts/main.js"></script>
+	</body>
 </html>
